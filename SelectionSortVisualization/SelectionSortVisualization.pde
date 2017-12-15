@@ -1,4 +1,4 @@
-int delay = 100;
+int delay = 50;
 
 SelectionSortData data;
 Thread thread;

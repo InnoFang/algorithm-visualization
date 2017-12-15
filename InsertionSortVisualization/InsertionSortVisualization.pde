@@ -1,4 +1,4 @@
-int delay = 100;
+int delay = 50;
 
 InsertionSortData data;
 VisualHelper vh;
@@ -6,7 +6,7 @@ Thread thread;
 
 void setup() {
    size(1200, 800);
-   data = new InsertionSortData(100, width);
+   data = new InsertionSortData(100, width, Type.NearlyOrdered);
    vh = new VisualHelper(data);
    thread = new Thread(new Runnable(){
        public void run() {
