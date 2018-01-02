@@ -1,5 +1,27 @@
 # AlgorithmVisualizer
+
 Using processing to Implement algorithm visualization
+
+
+## Sort Visualization
+
+### Selection Sort
+
+<img id="selection_sort" src="./gif/selection_sort.gif" align="center"/>               
+
+### Insertion Sort
+
+<img id="insertion_sort" src="./gif/insertion_sort.gif" align="center"/>
+
+### Merge Sort
+
+<img id="merge_sort" src="./gif/merge_sort.gif" align="center"/>
+
+### Quick Sort
+
+<img id="quick_sort" src="./gif/quick_sort.gif" align="center"/>
+
+
 
 # [License](https://github.com/InnoFang/AlgorithmVisualizer/blob/master/LICENSE)
 
