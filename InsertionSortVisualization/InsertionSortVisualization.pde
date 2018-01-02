@@ -6,7 +6,7 @@ Thread thread;
 
 void setup() {
    size(1200, 800);
-   data = new InsertionSortData(100, width, Type.NearlyOrdered);
+   data = new InsertionSortData(100, width, Type.Normal);
    vh = new VisualHelper(data);
    thread = new Thread(new Runnable(){
        public void run() {
