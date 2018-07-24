@@ -1,14 +1,13 @@
-# AlgorithmVisualizer
+# algorithm-visualization
 
-Using processing to Implement algorithm visualization
+Using processing to implement algorithm visualization
 
  + <a href="#sort_visualization">Sort Visualization</a>
    - <a href="#selection_sort">Selection Sort</a>
    - <a href="#insertion_sort">Insertion Sort</a>
    - <a href="#merge_sort">Merge Sort</a>
    - <a href="#quick_sort">Quic Sort</a>
-
-------------------------------------------------------
+  
 
 ## <i id="sort_visualization">Sort Visualization</i>
 
@@ -29,8 +28,7 @@ Using processing to Implement algorithm visualization
 <img src="./gif/quick_sort.gif" align="center"/>
 
 
-
--------------------------------------------------------
+ 
 
 # [License](https://github.com/InnoFang/AlgorithmVisualizer/blob/master/LICENSE)
 
