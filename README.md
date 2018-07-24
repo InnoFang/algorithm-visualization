@@ -13,21 +13,27 @@ Using processing to implement algorithm visualization
 
 ### <i id="selection_sort">Selection Sort</i>
 
-<img src="./gif/selection_sort.gif" align="center"/>               
+<img src="./gif/selection_sort.gif" align="center"/>         
+
+<br/>
 
 ### <i id="insertion_sort">Insertion Sort</i>
 
 <img src="./gif/insertion_sort.gif" align="center"/>
 
+<br/>
+
 ### <i id="merge_sort">Merge Sort</i>
 
 <img src="./gif/merge_sort.gif" align="center"/>
+
+<br/>
 
 ### <i id="quick_sort">Quick Sort</i>
 
 <img src="./gif/quick_sort.gif" align="center"/>
 
-
+<br/>
  
 
 # [License](https://github.com/InnoFang/AlgorithmVisualizer/blob/master/LICENSE)
