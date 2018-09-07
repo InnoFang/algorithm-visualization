@@ -12,14 +12,18 @@ from quick_sort import quick_sort
 from selection_sort import selection_sort
 
 sorting_method = {
-    'b' : [bubble_sort, r'Bubble Sort ($O(n^2)$)'] 
-    'i' : [insertion_sort, r'Insertion Sort ($O(n^2)$)'],
-    'm' : [merge_sort, r'Merge Sort ($O(n \cdot log_2(n))$)'],
-    'q' : [quick_sort, r'Quick Sort ($O(n \cdot log_2(n))$)'],
-    's' : [selection_sort, r'Selection Sort ($O(n^2)$)'] 
+    'b' : bubble_sort, 
+    'i' : insertion_sort, 
+    'm' : merge_sort, 
+    'q' : quick_sort, 
+    's' : selection_sort 
     }
 titles = {
-
+    'b' : r'Bubble Sort ($O(n^2)$)',
+    'i' : r'Insertion Sort ($O(n^2)$)',
+    'm' : r'Merge Sort ($O(n \cdot log_2(n))$)',
+    'q' : r'Quick Sort ($O(n \cdot log_2(n))$)',
+    's' : r'Selection Sort ($O(n^2)$)' 
 }
 invalid = '?'
 
@@ -39,19 +43,19 @@ def main():
     random.seed(time.time())
     random.shuffle(data)
 
-    sorting = sorting_method[order][0](data) if order in sorting_method else invalid
+    sorting = sorting_method[order] if order in sorting_method else invalid
     if sorting == invalid:
         print('Invalid!')
     else:
-        generator = sorting[0](data)
-        
+        generator = sorting(data)
+
         fig, ax = plt.subplots()
-        ax.set_title(method[1])
+        ax.set_title(titles[order])
         bar_rects = ax.bar(range(len(data)), data, align='edge')
         # Set axis limits. Set y axis upper limit high enough that the tops of
         # the bars won't overlap with the text label.   
         ax.set_xlim(0, total)
-        ax.set_ylim(0, int(1.07 * data))
+        ax.set_ylim(0, int(1.07 * total))
         
         text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
 

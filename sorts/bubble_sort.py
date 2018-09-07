@@ -11,7 +11,6 @@ def bubble_sort(data):
         swapped = False
         for j in range(len(data) - 1 - i):
             if data[j] > data[j + 1]:
-                swap(data, j, j + 1)
                 data[j], data[j + 1] = data[j + 1], data[j]
                 swapped = True
             yield data
