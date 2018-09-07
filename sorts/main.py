@@ -29,7 +29,7 @@ titles = {
 
 invalid = '?'
 
-menu = '''
+menu = '''\033[1;32;40m
 Sorting Method Menu:
 
     (b)ubble 
@@ -37,24 +37,22 @@ Sorting Method Menu:
     (m)erge 
     (q)uick 
     (s)election 
-    Press `Ctrl + C` and confirm `Enter` that can be exit.
-
+    Press `Ctrl + C` and confirm `Enter` that can be exit.\033[0m
 '''
 
 def main(): 
-    order = input('-> ')
+    order = input('--> ')
 
-    total = int(input("Enter the total number what you need: "))
+    sorting = sorting_method[order] if order in sorting_method else invalid
+    if sorting == invalid:
+        print(' ~  INVALID!')
+        return
 
+    total = int(input("Enter the total number what you need: \n--> "))
     data = [x + 1 for x in range(total)]
     random.seed(time.time())
     random.shuffle(data)
 
-    sorting = sorting_method[order] if order in sorting_method else invalid
-    if sorting == invalid:
-        print('Invalid!')
-        return
- 
     generator = sorting(data)
 
     fig, ax = plt.subplots()
@@ -75,12 +73,12 @@ def main():
         interation[0] += 1
         text.set_text('# of operation: {}'.format(interation[0]))
     
-    anim = animation.FuncAnimation(fig,  func=update_fig, fargs=(bar_rects, interation), 
-                                    frames=generator, interval=1, repeat=False)
     try:
+        anim = animation.FuncAnimation(fig,  func=update_fig, fargs=(bar_rects, interation), 
+                                    frames=generator, interval=1, repeat=False)
         plt.show()                               
-    except Exception:
-        pass
+    except BaseException:
+        print(' ~  TERMINATION!')
 
 def quit(signum, frame):
     print('Thank you for using.')
