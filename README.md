@@ -1,6 +1,6 @@
 # algorithm-visualization
 
-Using processing to implement algorithm visualization
+🏓Interesting visualization algorithm, implemented by Processing or Python.
 
  + <a href="#sort_visualization">Sort Visualization</a>
    - <a href="#selection_sort">Selection Sort</a>
