@@ -61,7 +61,7 @@ def main():
     # Set axis limits. Set y axis upper limit high enough that the tops of
     # the bars won't overlap with the text label.   
     ax.set_xlim(0, total)
-    ax.set_ylim(0, int(1.07 * total))
+    ax.set_ylim(0, int(1.20 * total))
     
     text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
 
@@ -71,7 +71,7 @@ def main():
         for rect, val in zip(rects, data):
             rect.set_height(val)
         interation[0] += 1
-        text.set_text('# of operation: {}'.format(interation[0]))
+        text.set_text('Operation: #{}'.format(interation[0]))
     
     try:
         anim = animation.FuncAnimation(fig,  func=update_fig, fargs=(bar_rects, interation), 
@@ -85,6 +85,7 @@ def quit(signum, frame):
     sys.exit()
 
 if __name__ == '__main__': 
+    # ENter `Ctrl + C` to terminal the process
     signal.signal(signal.SIGINT, quit) 
     signal.signal(signal.SIGTERM, quit)
     print(menu)
