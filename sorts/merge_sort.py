@@ -1,7 +1,7 @@
-def merge_sort(data):
-    return __merge_sort(data, 0, len(data) - 1)
+# def merge_sort(data):
+#     return __merge_sort(data, 0, len(data) - 1)
 
-def __merge_sort(data, start, end):
+def merge_sort(data, start, end):
     """Merge sort: O(nlogn)"""
     if end <= start:
         return

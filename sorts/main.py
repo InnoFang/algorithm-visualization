@@ -47,7 +47,7 @@ def main():
     if sorting == invalid:
         print('Invalid!')
     else:
-        generator = sorting(data)
+        generator = sorting(data, 0, total - 1) if order in ['m', 'q'] else sorting(data)
 
         fig, ax = plt.subplots()
         ax.set_title(titles[order])
