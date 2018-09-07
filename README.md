@@ -6,7 +6,7 @@
    - <a href="#selection_sort">Selection Sort</a>
    - <a href="#insertion_sort">Insertion Sort</a>
    - <a href="#merge_sort">Merge Sort</a>
-   - <a href="#quick_sort">Quic Sort</a>
+   - <a href="#quick_sort">Quick Sort</a>
   
 
 ## <i id="sort_visualization">Sort Visualization</i>
