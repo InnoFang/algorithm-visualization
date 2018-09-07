@@ -1,14 +1,14 @@
-# def merge_sort(data):
-#     return __merge_sort(data, 0, len(data) - 1)
+def merge_sort(data):
+    yield from __merge_sort(data, 0, len(data) - 1)
 
-def merge_sort(data, start, end):
+def __merge_sort(data, start, end):
     """Merge sort: O(nlogn)"""
     if end <= start:
         return
 
     mid = start + ((end - start + 1) // 2) - 1
-    yield from mergesort(data, start, mid)
-    yield from mergesort(data, mid + 1, end)
+    yield from __merge_sort(data, start, mid)
+    yield from __merge_sort(data, mid + 1, end)
     yield from merge(data, start, mid, end)
     yield data
 
