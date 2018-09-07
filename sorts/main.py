@@ -12,14 +12,16 @@ from quick_sort import quick_sort
 from selection_sort import selection_sort
 
 sorting_method = {
-    'b' : bubble_sort, 
-    'i' : insertion_sort,
-    'm' : merge_sort,
-    'q' : quick_sort,
-    's' : selection_sort
+    'b' : [bubble_sort, r'Bubble Sort ($O(n^2)$)'] 
+    'i' : [insertion_sort, r'Insertion Sort ($O(n^2)$)'],
+    'm' : [merge_sort, r'Merge Sort ($O(n \cdot log_2(n))$)'],
+    'q' : [quick_sort, r'Quick Sort ($O(n \cdot log_2(n))$)'],
+    's' : [selection_sort, r'Selection Sort ($O(n^2)$)'] 
     }
+titles = {
 
-INVALID_ORDER = '?'
+}
+invalid = '?'
 
 def main(): 
     total = int(input("Enter the total number what you need? "))
@@ -37,9 +39,33 @@ def main():
     random.seed(time.time())
     random.shuffle(data)
 
-    method = sorting_method[order](data) if order in sorting_method else INVALID_ORDER
-    if method == INVALID_ORDER:
-        print('Invalid order!')
+    sorting = sorting_method[order][0](data) if order in sorting_method else invalid
+    if sorting == invalid:
+        print('Invalid!')
+    else:
+        generator = sorting[0](data)
+        
+        fig, ax = plt.subplots()
+        ax.set_title(method[1])
+        bar_rects = ax.bar(range(len(data)), data, align='edge')
+        # Set axis limits. Set y axis upper limit high enough that the tops of
+        # the bars won't overlap with the text label.   
+        ax.set_xlim(0, total)
+        ax.set_ylim(0, int(1.07 * data))
+        
+        text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
+
+        interation = [0]
+        
+        def update_fig(data, rects, interation):
+            for rect, val in zip(rects, data):
+                rect.set_height(val)
+            interation[0] += 1
+            text.set_text('# of operation: {}'.format(interation[0]))
+        
+        anim = animation.FuncAnimation(fig,  func=update_fig, fargs=(bar_rects, interation), 
+                                       frames=generator, interval=1, repeat=False)
+        plt.show()                               
 
 def quit(signum, frame):
     print('Thank you for using.')
