@@ -18,6 +18,7 @@ sorting_method = {
     'q' : quick_sort, 
     's' : selection_sort 
     }
+
 titles = {
     'b' : r'Bubble Sort ($O(n^2)$)',
     'i' : r'Insertion Sort ($O(n^2)$)',
@@ -25,19 +26,25 @@ titles = {
     'q' : r'Quick Sort ($O(n \cdot log_2(n))$)',
     's' : r'Selection Sort ($O(n^2)$)' 
 }
+
 invalid = '?'
 
-def main(): 
-    total = int(input("Enter the total number what you need? "))
-    menu = '''Enter sorting method:
+menu = '''
+Sorting Method Menu:
 
     (b)ubble 
     (i)nsertion 
     (m)erge 
     (q)uick 
     (s)election 
-    '''
-    order = input(menu)
+    Press `Ctrl + C` and confirm `Enter` that can be exit.
+
+'''
+
+def main(): 
+    order = input('-> ')
+
+    total = int(input("Enter the total number what you need: "))
 
     data = [x + 1 for x in range(total)]
     random.seed(time.time())
@@ -47,11 +54,7 @@ def main():
     if sorting == invalid:
         print('Invalid!')
         return
-
-    # if order in ['m', 'q']:
-        # print('order: ', order)
-        # return
-    # generator = sorting(data, 0, total - 1) if order in ['m', 'q'] else sorting(data)
+ 
     generator = sorting(data)
 
     fig, ax = plt.subplots()
@@ -74,19 +77,18 @@ def main():
     
     anim = animation.FuncAnimation(fig,  func=update_fig, fargs=(bar_rects, interation), 
                                     frames=generator, interval=1, repeat=False)
-    plt.show()                               
+    try:
+        plt.show()                               
+    except Exception:
+        pass
 
 def quit(signum, frame):
     print('Thank you for using.')
     sys.exit()
 
-if __name__ == '__main__':
-    # while 1:
-        # try:
-        #     main()
-        # except KeyboardInterrupt:
-        #     pass
+if __name__ == '__main__': 
     signal.signal(signal.SIGINT, quit) 
     signal.signal(signal.SIGTERM, quit)
+    print(menu)
     while True:
         main()
