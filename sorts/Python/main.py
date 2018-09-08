@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import random
 import time
 import sys
@@ -10,6 +11,7 @@ from insertion_sort import insertion_sort
 from merge_sort import merge_sort
 from quick_sort import quick_sort
 from selection_sort import selection_sort
+
 
 sorting_method = {
     'b' : bubble_sort, 
@@ -39,6 +41,7 @@ Sorting Method Menu:
     (s)election 
     Press `Ctrl + C` and confirm `Enter` that can be exit.\033[0m
 '''
+
 
 def main(): 
     order = input('--> ')
@@ -80,9 +83,13 @@ def main():
     except BaseException:
         print(' ~  TERMINATION!')
 
+    print('====================================')
+
+
 def quit(signum, frame):
     print('Thank you for using.')
     sys.exit()
+
 
 if __name__ == '__main__': 
     # ENter `Ctrl + C` to terminal the process
