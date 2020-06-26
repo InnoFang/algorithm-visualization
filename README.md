@@ -13,25 +13,25 @@
 
 ### <i id="selection_sort">Selection Sort</i>
 
-<img src="./gif/selection_sort.gif" align="center"/>         
+<img src="https://cdn.jsdelivr.net/gh/innofang/algorithm-visualization/gif/selection_sort.gif" align="center"/>         
 
 <br/>
 
 ### <i id="insertion_sort">Insertion Sort</i>
 
-<img src="./gif/insertion_sort.gif" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/innofang/algorithm-visualization/gif/insertion_sort.gif" align="center"/>
 
 <br/>
 
 ### <i id="merge_sort">Merge Sort</i>
 
-<img src="./gif/merge_sort.gif" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/innofang/algorithm-visualization/gif/merge_sort.gif" align="center"/>
 
 <br/>
 
 ### <i id="quick_sort">Quick Sort</i>
 
-<img src="./gif/quick_sort.gif" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/innofang/algorithm-visualization/gif/quick_sort.gif" align="center"/>
 
 <br/>
  
